@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-eks-deployment
+  labels:
+    app: hello-world-eks
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-eks
+  template:
+    metadata:
+      labels:
+        app: hello-world-eks
+    spec:
+      containers:
+      - name: hello-world-eks
+        image: 977769338170.dkr.ecr.us-east-1.amazonaws.com/hello-world-eks-repo:latest
+        ports:
+        - name: http-server
+          containerPort: 8080

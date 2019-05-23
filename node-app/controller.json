@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"hello-world-eks",
+      "labels":{
+         "app":"hello-world-eks"
+      }
+   },
+   "spec":{
+      "replicas":3,
+      "selector":{
+         "app":"hello-world-eks"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"hello-world-eks"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"hello-world-eks",
+                  "image":"docker.io/dmchugh777/hello-world-eks:latest",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":8080
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

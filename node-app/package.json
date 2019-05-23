@@ -1,0 +1,13 @@
+{
+  "name": "hello_eks_web_app",
+  "version": "1.0.0",
+  "description": "Simple App to test EKS",
+  "author": "Dan McHugh <dmchugh777@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}

@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world-eks
+  labels:
+    app: hello-world-eks
+spec:
+  ports:
+  - port: 8080
+    targetPort: http-server
+  selector:
+    app: hello-world-eks
+  type: LoadBalancer

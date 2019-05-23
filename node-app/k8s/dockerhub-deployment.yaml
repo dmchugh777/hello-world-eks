@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-eks-deployment
+  labels:
+    app: hello-world-eks
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-eks
+  template:
+    metadata:
+      labels:
+        app: hello-world-eks
+    spec:
+      containers:
+      - name: hello-world-eks
+        image: docker.io/dmchugh777/hello-world-eks:latest
+        ports:
+        - name: http-server
+          containerPort: 8080

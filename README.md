@@ -56,7 +56,7 @@ At this point things are pretty striaght forward and able to use the 'kubectl' c
 
 I ran through the "kubectl apply..." commands pretty quickly, however when I tried to go to the app there appeared to be an issue even after I waited for a bit.
 
-![Guest Book](screenshots/guestbook_broke.png)
+![Guest Book](screen-shots/guestbook_broke.png)
 
 Looking at the pods I see:
 ```
@@ -108,7 +108,7 @@ dmchugh@dmchugh-005948:/mnt/c/Workspaces/hello-world-eks/k8s$
 ```
 Looks good and it deployed!
 
-![Guest Book](screenshots/hello_world_eks_deployed.png)
+![Hello World](screen-shots/hello_world_eks_deployed.png)
 
 6. So next I pushed my image to Amazon ECS so that my docker images are within my Amazon AWS account and not dockerhub.
    - I followed the ["Docker Basics for Amazon ECS" Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html)

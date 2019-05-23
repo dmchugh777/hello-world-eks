@@ -2,17 +2,17 @@
 
 ## Overview 
 
-As a new EKS user I've documented my experience while following the [Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html) and also setting up and deploying my own simple application on EKS. The intention of this document is to provide AWS constructive feedback and suggestions for improvement from a first time EKS user experience. 
+As a new EKS user I've documented my experience while following the [Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html) and also setting up and deploying my own simple application on EKS. The intention of this document is to provide AWS constructive feedback and suggestions for improvement from a first time EKS user experience. In this document I provide comments on various sections/tutorials.
 
 
-### Create your Amazon EKS Service Role
+### Getting Started Section: Create your Amazon EKS Service Role
 
 Here's an observation I had while creating a cluster using the EKS management console. The first screen of the 'Create Cluster' page has a number of required fields. In some cases it's not possible to to create a cluster without reading the getting started guide. Here's an example
 
 If creating a new IAM role is a prerequisite to creating an EKS cluster, then the managment console should more easily allow you to create this role without having to leave the 'Create Cluster' management screen. It navigates to the IAM Management screen and you don't know what to do there unless you're also reading the [Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html) at the same time.
 
 
-### Create your Amazon EKS Cluster VPC
+### Getting Started Section: Create your Amazon EKS Cluster VPC
 
 In the section "Create your Amazon EKS Cluster VPC", the getting started guide walks new EKS users through the process of creating a new VPC for a kubernetes cluster. The document provides a CloudFormation template so that the user can create a VPC. This seems a bit cumbersome for a getting started guide. Shouldn't the guide assume that a new user will use the default VPC to quickly get a new user up and running? The notes regarding VPC isolation are valid and should be noted for production deployments. One question I have regarding this level of isolation is if it will make it harder for applications deployed in EKS to integrate with services deployed in other VPCs (Example: RDS)?
 
@@ -22,7 +22,7 @@ Also, if creating up a new VPC is such a critical part of setting up a new clust
 
 One more small observation is that the after running the VPC CloudFormation script, the document later references a security group that got created under "Step 1: Create Your Amazon EKS Cluster". From a new EKS user perspective my thoughts where, "What are all the pieces that need to be in place for a new cluster?"
 
-### Step 3: Launch and Configure Amazon EKS Worker Nodes
+### Getting Started Section: Step 3: Launch and Configure Amazon EKS Worker Nodes
 
 As a new EKS user I've now created my kubernetes cluster and am ready to start deploying some containers.... Oh wait.
 When looking at "EKS -> Clusters -> mycluster", I don't see anywhere manage my worker nodes. I would expect that as a platform managed service, that the management console would allow me to manage my cluster (including it's worker nodes) via the manage console UI. Alas, I must refer to the getting started guide where I find that once again I must run CloudFormation scripts in order to accomplish this. If I compare the ElasticSearch Service to EKS with this regarding, the ElasticSearch Service management console makes it very easy for me to manage how many nodes are in my cluster. 
@@ -49,7 +49,7 @@ I understand that most of these limitations are due to the fact that I'm running
 
 After completing the steps I was finally able to complete the creation of my kubernetes cluster and worker nodes. Now on to trying to deploy my containers.
 
-## Launch a Guest Book Application 
+## Tutorial: Launch a Guest Book Application 
 
 After creating my cluster, I began this tutorial to fiqure out how to deploy my application in my new k8s cluster. 
 At this point things are pretty striaght forward and able to use the 'kubectl' command which we all know and love.
@@ -131,6 +131,6 @@ Looks good and it deployed!
 
 I think my general comments can be boiled down to the following idea, "Run less scripts and push more buttons".
 Running multiple CloudFormation scripts makes me feel like EKS is not a fully managed and easy to use service. 
-There are many manual steps required to create a cluster using the management console and to create a simple EKS cluster the console itself should automate most of these steps for a better first time EKS user experience.
+There are many manual steps required to create a cluster while also trying to use the management console. To create a simple EKS cluster is not possible in the management console itself which should automate most of these steps for a better first time EKS user experience.
 
 

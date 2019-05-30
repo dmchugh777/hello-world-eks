@@ -18,7 +18,7 @@ In the section "Create your Amazon EKS Cluster VPC", the getting started guide w
 
 > You must also create a VPC and a security group for your cluster to use. Although the VPC and security groups can be used for multiple EKS clusters, we recommend that you use a separate VPC for each EKS cluster to provide better network isolation.
 
-Also, if creating up a new VPC is such a critical part of setting up a new cluster then I would suggest building that workflow right into the EKS management console interfaces, rather than asking the new user to run "one-off" CloudFormation scripts. This gives the EKS product the appearence of being "half-baked". Also, it sends new users down a rabbit hole (what is CloudFormation? what does this script do?), new EKS users should be able to focus on using Kubernetes.
+If creating a new VPC is such a critical part of setting up a new cluster then I would suggest building that workflow right into the EKS management console interfaces, rather than asking the new user to run "one-off" CloudFormation scripts. This gives the EKS product the appearence of being "half-baked". Also, it sends new users down a rabbit hole (what is CloudFormation? what does this script do?), new EKS users should be able to focus on using Kubernetes.
 
 One more small observation is that the after running the VPC CloudFormation script, the document later references a security group that got created under "Step 1: Create Your Amazon EKS Cluster". From a new EKS user perspective my thoughts where, "What are all the pieces that need to be in place for a new cluster?"
 

@@ -25,7 +25,7 @@ One more small observation is that the after running the VPC CloudFormation scri
 ### Getting Started Section: Step 3: Launch and Configure Amazon EKS Worker Nodes
 
 As a new EKS user I've now created my kubernetes cluster and am ready to start deploying some containers.... Oh wait.
-When looking at "EKS -> Clusters -> mycluster", I don't see anywhere manage my worker nodes. I would expect that as a platform managed service, that the management console would allow me to manage my cluster (including it's worker nodes) via the manage console UI. Alas, I must refer to the getting started guide where I find that once again I must run CloudFormation scripts in order to accomplish this. If I compare the ElasticSearch Service to EKS with this regarding, the ElasticSearch Service management console makes it very easy for me to manage how many nodes are in my cluster. 
+When looking at "EKS -> Clusters -> mycluster", I don't see anywhere manage my worker nodes. I would expect that as a platform managed service, that the management console would allow me to manage my cluster (including it's worker nodes) via the manage console UI. Alas, I must refer to the getting started guide where I find that once again I must run CloudFormation scripts in order to accomplish this. If I compare this ElasticSearch Service, that management console makes it very easy for me to manage the size of my cluster. 
 
 As I continue to follow this section of the getting started guide there definatley some small improvements that would go a long way towards usablity. When using the CloudFormation script:
 - Providing the ClusterName, why can't this be a drop down with my cluster already there?

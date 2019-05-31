@@ -7,20 +7,20 @@ As a new EKS user I've documented my experience while following the [Getting Sta
 
 ### Getting Started Section: Create your Amazon EKS Service Role
 
-Here's an observation I had while creating a cluster using the EKS management console. The first screen of the 'Create Cluster' page has a number of required fields. In some cases it's not possible to to create a cluster without reading the getting started guide. Here's an example
+Here's an observation I had while creating a cluster using the EKS management console. The first screen of the 'Create Cluster' page has a number of required fields. In some cases it's not possible to to create a cluster without reading the getting started guide. Here's an example:
 
-If creating a new IAM role is a prerequisite to creating an EKS cluster, then the managment console should more easily allow you to create this role without having to leave the 'Create Cluster' management screen. It navigates to the IAM Management screen and you don't know what to do there unless you're also reading the [Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html) at the same time.
+If creating a new IAM role is a prerequisite for an EKS cluster, then the managment console should more easily allow you to create this role without having to leave the 'Create Cluster' management screen. It navigates to the IAM Management screen and you don't know what to do there unless you're also reading the [Getting Started Guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html) at the same time.
 
 
 ### Getting Started Section: Create your Amazon EKS Cluster VPC
 
-In the section "Create your Amazon EKS Cluster VPC", the getting started guide walks new EKS users through the process of creating a new VPC for a kubernetes cluster. The document provides a CloudFormation template so that the user can create a VPC. This seems a bit cumbersome for a getting started guide. Shouldn't the guide assume that a new user will use the default VPC to quickly get up and running quickly? The notes regarding VPC isolation are valid and should be noted for production deployments. One question I have regarding this level of isolation is if it will make it harder for applications deployed in EKS to integrate with services deployed in other VPCs (Example: RDS)?
+In the section "Create your Amazon EKS Cluster VPC", the getting started guide walks new EKS users through the process of creating a new VPC for a kubernetes cluster. The document provides a CloudFormation template so that the user can create a VPC. This seems a bit cumbersome for a getting started guide. Shouldn't the guide assume that a new user will use the default VPC to quickly get up and running? The notes regarding VPC isolation are valid and should be noted for production deployments. One question I have regarding this level of isolation is if it will make it harder for applications deployed in EKS to integrate with services deployed in other VPCs (Example: RDS)?
 
 > You must also create a VPC and a security group for your cluster to use. Although the VPC and security groups can be used for multiple EKS clusters, we recommend that you use a separate VPC for each EKS cluster to provide better network isolation.
 
-If creating a new VPC is such a critical part of setting up a new cluster then I would suggest building that workflow right into the EKS management console interfaces, rather than asking the new user to run "one-off" CloudFormation scripts. This gives the EKS product the appearence of being "half-baked". Also, it sends new users down a rabbit hole (what is CloudFormation? what does this script do?), new EKS users should be able to focus on using Kubernetes.
+If creating a new VPC is such a critical part of setting up a new cluster then I would suggest building that workflow right into the EKS management console interfaces, rather than asking the new user to run "one-off" CloudFormation scripts. This gives the EKS product the appearence of being "half-baked". Also, it sends new users down a rabbit hole (what is CloudFormation? what does this script do?, etc..), new EKS users should be able to focus on using Kubernetes.
 
-One more small observation is that the after running the VPC CloudFormation script, the document later references a security group that got created under "Step 1: Create Your Amazon EKS Cluster". From a new EKS user perspective my thoughts where, "What are all the pieces that need to be in place for a new cluster?"
+One more small observation is that the after running the VPC CloudFormation script, the document later references a security group that was created under "Step 1: Create Your Amazon EKS Cluster". From a new EKS user perspective my thoughts where, "What is all the infrastruction being generated under the covers to create a cluster that I need to know about which I'm not learning as part of this tutorial?"
 
 ### Getting Started Section: Step 3: Launch and Configure Amazon EKS Worker Nodes
 
